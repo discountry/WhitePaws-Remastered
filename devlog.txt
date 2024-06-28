@@ -1,0 +1,54 @@
+/run print(C_LossOfControl.GetActiveLossOfControlData(1).locType)
+
+STUN_MECHANIC 昏迷
+STUN 沉睡 放逐 瘫痪 被闷棍 恐惧 魅惑
+ROOT 被定身
+POSSESS 魅惑
+FEAR_MECHANIC 恐惧
+CONFUSE 变形 迷惑
+SCHOOL_INTERRUPT 打断
+SILENCE 变形 沉默
+DISARM 缴械
+FEAR 惊骇
+CHARM 魅惑
+PACIFY 平静
+
+
+/run print(nextTick)
+
+C_LossOfControl.GetActiveLossOfControlDataByUnit
+
+/run SendChatMessage(C_LossOfControl.GetActiveLossOfControlData(1).locType);SendChatMessage(C_LossOfControl.GetActiveLossOfControlData(1).displayText)
+
+/run SendChatMessage(C_LossOfControl.GetActiveLossOfControlDataCountByUnit("target"))
+
+/run SendChatMessage(string.format("当前移速: %d%%", select(2, GetUnitSpeed("target")) / BASE_MOVEMENT_SPEED * 100+0.5))
+
+/run print(GetUnitSpeed("target"))
+
+/run local y,n,s,_ for i=1,40 do n,_,_,_,_,_,_,s=UnitAura("target",i)if s then print(n.." on target, steal it!")y=1 end end if y~=1 then print("No stealable buffs.")end
+
+/run print(UnitDebuff("target", 1))
+
+/framestack
+
+/脚本 CreateFrame("Frame","F")F:RegisterEvent("UNIT_POWER_FREQUENT")F:Y:SetScript("OnEvent",function(_,_,t)if t=='ENERGY' and l then print(GetTime)
+
+					ChatFrame3:AddMessage(powerType)
+					ChatFrame3:AddMessage(nextTick)
+					ChatFrame3:AddMessage(2 - mod(GetTime() - self[key].timer, 2))
+					ChatFrame3:AddMessage('----------------------')
+
+/dump GetItemStats('达图尔的变形魔棒')
+
+/run print(select(6, UnitBuff("player", 2))[0])
+
+/run print(UnitBuff("player", 2))
+
+/run print(GetSpellCooldown(50213))
+
+/run SELECTED_CHAT_FRAME:AddMessage(GetTime())
+
+/run local _, _, _, _, duration, expirationTime = UnitBuff("player", 6);SELECTED_CHAT_FRAME:AddMessage(expirationTime - GetTime())
+
+/run local cooldown,duration = GetSpellCooldown(50213);print(cooldown + duration - GetTime())
