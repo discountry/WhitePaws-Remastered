@@ -1,6 +1,6 @@
 https://www.curseforge.com/wow/addons/whitepaws
 
-**重置复活版**
+**WLK 重置复活版**
 
 下载本项目 Zip 包放到 `Interface/Add Ons/WhitePaws` 里，确保目录名叫 `WhitePaws`，游戏中插件选择上白爪助手,就可以用下面的宏了
 
@@ -19,8 +19,6 @@ Only for chinese tbc classic version
 4. Tells if been control
 
 input /wc for help and settings
-
-只能用于中文燃烧的远征怀旧客户端
 
 1. 猫输出宏
    帮助写出输出宏，自动决定打出技能还是变身
