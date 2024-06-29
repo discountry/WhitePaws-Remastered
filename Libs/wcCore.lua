@@ -172,10 +172,9 @@ end
 -- 猛虎 50213
 
 function wc.enoughEnergy(cost)
-	if (wc.getBuff(16870) and wc.getRage() < 25) or wc.getCoolDown(50213) < 2 then
-		return true
-	end
-	return wc.getEnergy() >= cost
+	local hasBuff = (wc.getBuff(16870) and wc.getRage() < 25) or wc.getCoolDown(50213) < 2
+	local hasEnergy = wc.getEnergy() >= cost
+	return hasBuff or hasEnergy
 end
 
 function wc.enoughRage(cost)
