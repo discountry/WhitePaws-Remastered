@@ -48,8 +48,8 @@ end
 -- 5229 激怒
 -- 50334 狂暴
 function jnbxjgx(e)
-	if not wc.strongControl and wc.enoughMana() and not wc.getShiftGCD() and not wc.enoughEnergy(e) and not wc.getBuff(50334) and GetSpellCooldown(5229) == 0 then
-		SetCVar('autoUnshift', 1)
+	if wc.spellReady(5229) then
+		bxjgx(e)
 	else
 		SetCVar('autoUnshift', 0)
 	end
@@ -57,7 +57,7 @@ end
 
 --变形金刚-变猫
 function bxjgm(e)
-	if not wc.strongControl and wc.enoughMana() and (wc.needUnroot() or wc.enoughEnergy(e)) then
+	if not wc.strongControl and wc.enoughMana() and (wc.needUnroot() or wc.enoughEnergy(e) or not wc.enoughRage(10)) then
 		if not wc.getShiftGCD() then
 			SetCVar('autoUnshift', 1)
 		else

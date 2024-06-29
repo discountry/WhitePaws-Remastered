@@ -90,6 +90,10 @@ function wc.getShiftGCD()
 	return GetSpellCooldown(768) ~= 0
 end
 
+function wc.spellReady(spellID)
+	return GetSpellCooldown(spellID) == 0
+end
+
 function wc.ableShift()
 	local cd = 0
 	if wc.getShiftGCD() then
@@ -172,6 +176,10 @@ function wc.enoughEnergy(cost)
 		return true
 	end
 	return wc.getEnergy() >= cost
+end
+
+function wc.enoughRage(cost)
+	return wc.getRage() >= cost
 end
 
 function wc.needUnroot()
